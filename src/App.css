@@ -1,0 +1,26 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+}
+
+/* Smooth scrolling and animations */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom text selection */
+::selection {
+  background-color: #00BCD4;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #00BCD4;
+  color: white;
+}
+
+
