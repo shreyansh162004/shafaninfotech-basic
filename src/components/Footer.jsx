@@ -66,9 +66,7 @@ const Footer = () => {
 
           {/* Contact Column */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-heading mb-6 text-cyan-400">
-              Contact
-            </h4>
+            <h4 className="text-lg font-heading mb-6 text-cyan-400">Contact</h4>
             <div className="space-y-4">
               <motion.a
                 href="tel:9399127741"

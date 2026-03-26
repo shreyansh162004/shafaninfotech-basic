@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,43 +9,43 @@ const Reviews = () => {
   const reviews = [
     {
       id: 1,
-      name: 'Rahul Sharma',
-      city: 'Jabalpur',
+      name: "Rahul Sharma",
+      city: "Jabalpur",
       rating: 5,
-      text: 'Excellent quality laptop at a very reasonable price. The team was very helpful and honest about the device condition. Highly recommended!',
-      avatar: '👨‍💼',
+      text: "Excellent quality laptop at a very reasonable price. The team was very helpful and honest about the device condition. Highly recommended!",
+      avatar: "👨‍💼",
     },
     {
       id: 2,
-      name: 'Priya Verma',
-      city: 'Indore',
+      name: "Priya Verma",
+      city: "Indore",
       rating: 5,
-      text: 'Best deal on laptops I found! Great customer service and fast delivery. My Dell laptop works perfectly. Thank you, Shafan Infotech!',
-      avatar: '👩‍💻',
+      text: "Best deal on laptops I found! Great customer service and fast delivery. My Dell laptop works perfectly. Thank you, Shafan Infotech!",
+      avatar: "👩‍💻",
     },
     {
       id: 3,
-      name: 'Aman Tiwari',
-      city: 'Bhopal',
+      name: "Aman Tiwari",
+      city: "Bhopal",
       rating: 5,
-      text: 'Professional service from start to finish. The laptop is in excellent condition. I am very satisfied with the warranty support provided.',
-      avatar: '👨‍🎓',
+      text: "Professional service from start to finish. The laptop is in excellent condition. I am very satisfied with the warranty support provided.",
+      avatar: "👨‍🎓",
     },
     {
       id: 4,
-      name: 'Neha Gupta',
-      city: 'Jbalpur',
+      name: "Neha Gupta",
+      city: "Jbalpur",
       rating: 5,
-      text: 'Great experience! Found the exact specs I needed at a fraction of the retail price. Will definitely recommend to my friends and family.',
-      avatar: '👩‍💼',
+      text: "Great experience! Found the exact specs I needed at a fraction of the retail price. Will definitely recommend to my friends and family.",
+      avatar: "👩‍💼",
     },
     {
       id: 5,
-      name: 'Vikram Singh',
-      city: 'Ujjain',
+      name: "Vikram Singh",
+      city: "Ujjain",
       rating: 5,
-      text: 'Superb after-sales support and genuine products. My HP laptop is running smoothly after 6 months. Keep up the good work!',
-      avatar: '👨‍💻',
+      text: "Superb after-sales support and genuine products. My HP laptop is running smoothly after 6 months. Keep up the good work!",
+      avatar: "👨‍💻",
     },
   ];
 
@@ -62,7 +62,7 @@ const Reviews = () => {
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
+      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1,
     );
     setAutoPlayEnabled(false);
   };
@@ -91,12 +91,17 @@ const Reviews = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <h2 className="text-3xl md:text-4xl font-display text-gray-900 mb-4">
-            Customer <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">Reviews</span>
+            Customer{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
+              Reviews
+            </span>
           </h2>
-          <p className="text-gray-600 text-lg font-body">What our satisfied customers have to say</p>
+          <p className="text-gray-600 text-lg font-body">
+            What our satisfied customers have to say
+          </p>
         </motion.div>
 
         {/* Reviews Carousel */}
@@ -105,7 +110,7 @@ const Reviews = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           onMouseEnter={() => setAutoPlayEnabled(false)}
           onMouseLeave={() => setAutoPlayEnabled(true)}
         >
@@ -123,7 +128,9 @@ const Reviews = () => {
                 <div className="text-center max-w-2xl">
                   {/* Avatar and Stars */}
                   <div className="mb-6">
-                    <div className="text-5xl mb-4">{reviews[currentIndex].avatar}</div>
+                    <div className="text-5xl mb-4">
+                      {reviews[currentIndex].avatar}
+                    </div>
                     <div className="flex justify-center mb-4">
                       {renderStars(reviews[currentIndex].rating)}
                     </div>
@@ -139,7 +146,9 @@ const Reviews = () => {
                     <p className="text-xl font-bold text-gray-900">
                       {reviews[currentIndex].name}
                     </p>
-                    <p className="text-gray-600">{reviews[currentIndex].city}</p>
+                    <p className="text-gray-600">
+                      {reviews[currentIndex].city}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -170,8 +179,8 @@ const Reviews = () => {
                 key={index}
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'bg-blue-600 w-8'
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    ? "bg-blue-600 w-8"
+                    : "bg-gray-300 hover:bg-gray-400"
                 }`}
                 onClick={() => {
                   setCurrentIndex(index);
@@ -195,12 +204,12 @@ const Reviews = () => {
           }}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           {[
-            { label: 'Happy Customers', value: '1000+' },
-            { label: 'Average Rating', value: '4.9★' },
-            { label: 'Returning Rate', value: '95%' },
+            { label: "Happy Customers", value: "1000+" },
+            { label: "Average Rating", value: "4.9★" },
+            { label: "Returning Rate", value: "95%" },
           ].map((stat, index) => (
             <motion.div
               key={index}
